@@ -2,15 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import data from './data';
 
-function Orders () {
+function Orders() {
     return (
-        <div className= "content-margined">
+        <div className= "content content-margined">
                 <div className="order-header">
                         <h3>Orders</h3>
                 </div>
                 <div className="order-list">
                         <table className="table">
-                                <thread>
+                                <thead>
                                     <tr>
                                         <th>ID</th>
                                         <th>DATE</th>
@@ -22,12 +22,13 @@ function Orders () {
                                         <th>DELIVERED AT</th>
                                         <th>ACTIONS</th>
                                     </tr>
-                                </thread>
-                                // missing an arrow below => I didnt know how to add the arrow
+                                </thead>
+
                                 <tbody>
-                                        {data.orders.map(order  (<tr key={Orders.id}>
+                                        {data.orders.map((order) => (
+                                             <tr key={order._id}>
                                                 <td>{order._id}</td>
-                                                <td>{order.createdAT}</td>
+                                                <td>{order.createdAt}</td>
                                                 <td>{order.totalPrice}</td>
                                                 <td>{order.user.name}</td>
                                                 <td>{order.isPaid.toString()}</td>
@@ -35,9 +36,9 @@ function Orders () {
                                                 <td>{order.isDelivered.toString()}</td>
                                                 <td>{order.deliveredDate}</td>
                                                 <td>
-                                                        <Link to={"/order/" + order_id} className="button secondary" >Details</Link>
+                                                        <Link to={"/order/" + order._id} className="button secondary" >Details</Link>
                                                 </td>
-                                            </tr>))}
+                                             </tr>))}
                                 </tbody>
                         </table>
                 </div>
