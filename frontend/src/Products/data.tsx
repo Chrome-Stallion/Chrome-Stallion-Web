@@ -22,8 +22,5 @@ export default {
         brand: 'Nike',
         rating: 4.5,
         numberOfReviews: 10,
-    }
-
-
     }]
 }
