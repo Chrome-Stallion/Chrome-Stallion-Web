@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.css';
 import { Route, BrowserRouter as Router, Routes, Link } from 'react-router-dom';
-import Product from './Products/Products';
+import Products from './Products/Products';
 import Home from './Home/Home';
 import Orders from './Orders/Orders';
+import OrderDetail from './Orders/OrderDetail';
+import PaymentScreen from './Payment/Payment';
 
 function App() {
 
@@ -32,6 +34,7 @@ function App() {
                         <Link to="/">Home</Link>
                         <Link to="/catalog">Catalog</Link>
                         <Link to="/orders">Orders</Link>
+                        <Link to="/payments">Payment</Link>
                     </div>
                     <header className = "header">
                         <div className = "brand">
@@ -59,6 +62,8 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/catalog" element={<Products />} />
                         <Route path ="orders" element={<Orders />}></Route>
+                        <Route path ="/order/:id" element={<OrderDetail />}></Route>
+                        <Route path ="/payments" element={<PaymentScreen />}></Route>
                     </Routes>
                 </main>
                 <footer className="footer">&copy; 2022 Chrome Stallion</footer>
