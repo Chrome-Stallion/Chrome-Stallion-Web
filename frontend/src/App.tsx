@@ -3,6 +3,7 @@ import './App.css';
 import { Route, BrowserRouter as Router, Routes, Link } from 'react-router-dom';
 import Product from './Products/Products';
 import Home from './Home/Home';
+import Orders from './Orders/Orders';
 
 function App() {
 
@@ -30,6 +31,7 @@ function App() {
                     <div className="header-links">
                         <Link to="/">Home</Link>
                         <Link to="/catalog">Catalog</Link>
+                        <Link to="/orders">Orders</Link>
                     </div>
                     <header className = "header">
                         <div className = "brand">
@@ -55,7 +57,8 @@ function App() {
                 <main className="main">
                     <Routes>
                         <Route path="/" element={<Home />} />
-                        <Route path="/catalog" element={<Product />} />
+                        <Route path="/catalog" element={<Products />} />
+                        <Route path ="orders" element={<Orders />}></Route>
                     </Routes>
                 </main>
                 <footer className="footer">&copy; 2022 Chrome Stallion</footer>
