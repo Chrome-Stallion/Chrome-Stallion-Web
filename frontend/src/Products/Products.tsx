@@ -1,9 +1,12 @@
 import React from 'react';
 import data from './data';
 
-//I think what I commented out here can be deleted
-//<div className = "content">
-    <ul className = "products">
+
+function Products() {
+    return (
+        //I think what I commented out here can be deleted
+        //<div className = "content">
+        <ul className = "products">
         {
             data.products.map((product)=>(
                 <li>
@@ -26,6 +29,10 @@ import data from './data';
             ))
         }
         ;
-    </ul>
-//</div>
+        </ul>
+        //</div>
+    )
+}
+
+export default Products;
     
