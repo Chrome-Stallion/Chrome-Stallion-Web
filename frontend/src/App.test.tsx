@@ -1,9 +1,18 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
+// import { execPath } from 'process';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe('The main app', () => {
+
+  it('should render the Orders link', () => {
+    render(<App />);
+    expect(screen.getByText('Orders')).toBeInTheDocuments();
+  });
+
+  it('payments component should be in app component', () => {
+    render(<App />);
+    expect(screen.getByText('Payment')).toBeInTheDocument();
+  });
+
 });
